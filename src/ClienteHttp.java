@@ -28,7 +28,7 @@ public class ClienteHttp {
             System.out.println("Error: " + e);
             // embrulha em uma RuntimeException, que não precisa de tratamento
             throw new RuntimeException(e);
-            
+            //TODO Desafio: pode-se criar a sua própria excessão !?
         }
 
     }

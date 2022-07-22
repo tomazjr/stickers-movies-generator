@@ -1,3 +1,4 @@
+//TODO Desafio: trocar essa class para um record !?
 public class Conteudo {
 
     // private restringe o acesso a esse atributo,
