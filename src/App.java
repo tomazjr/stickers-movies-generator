@@ -1,10 +1,5 @@
 import java.io.InputStream;
-import java.net.URI;
 import java.net.URL;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.net.http.HttpResponse.BodyHandlers;
 import java.util.List;
 import java.util.Map;
 
@@ -19,16 +14,12 @@ public class App {
         // String url = "https://api.mocki.io/v2/549a5d8b/Top250Movies";
         String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/NASA-APOD.json";
 
-        URI uri = URI.create(url); // endereço
-        HttpClient client =  HttpClient.newHttpClient();
-        HttpRequest request =  HttpRequest.newBuilder(uri).GET().build();
-        HttpResponse<String> response =  client.send(request, BodyHandlers.ofString());
-        var body = response.body(); // var é uma String, pois o response foi manipulado como String
-        // System.out.println(body);
+        var http = new ClienteHttp();
+        String json = http.buscaDados(url);
 
         /// extrair somente os dados interessantes (título, poster, classificação)
         JsonParser parser = new JsonParser();
-        List<Map<String, String>> listaDeConteudos = parser.parse(body);
+        List<Map<String, String>> listaDeConteudos = parser.parse(json);
         // System.out.println(listaDeConteudos.size());
         // System.out.println(listaDeConteudos.get(0));
 
