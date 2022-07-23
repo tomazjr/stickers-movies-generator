@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Map;
 
 // implements é uma assinatura de contrato, onde você deve implementar o que diz o apontado pelo implements
-public class ExtratorDeConteudoIMDB implements ExtratorDeConteudo{
+public class ExtratorDeConteudoDoIMDB implements ExtratorDeConteudo{
 
     public List<Conteudo> extraiConteudos(String json){
         

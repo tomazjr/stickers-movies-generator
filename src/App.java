@@ -6,16 +6,20 @@ public class App {
     public static void main(String[] args) throws Exception {
         // System.out.println("Hello, World!");
 
-        /// requisição http para a api, resgatando os top 250 filmes
+        /// requisição http para a api, resgatando as informações do conteúdo
+        //TODO Desafio: explorar outras apis
         // k_12345678 seria o seu código de registro
-        // String url = "https://imdb-api.com/en/API/Top250Movies/k_12345678";
+        // String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
         
         //TODO Desafio: tratar a api (url-ExtratorDeConteudo) em uma enum !?
-        // String url = "https://api.mocki.io/v2/549a5d8b/Top250Movies";
-        // ExtratorDeConteudo extrator = new ExtratorDeConteudoIMDB();
+        // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/TopMovies.json";
+        // ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
-        String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/NASA-APOD.json";
-        ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+        // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/NASA-APOD.json";
+        // ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
+
+        String url = "http://localhost:8080/linguagens";
+        ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
         var http = new ClienteHttp();
         String json = http.buscaDados(url);
