@@ -8,10 +8,12 @@ public class App {
 
         /// requisição http para a api, resgatando as informações do conteúdo
         //TODO Desafio: explorar outras apis
-        // k_12345678 seria o seu código de registro
-        // String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
-        
         //TODO Desafio: tratar a api (url-ExtratorDeConteudo) em uma enum !?
+        // k_12345678 seria o seu código de registro
+
+        // String url = "https://imdb-api.com/en/API/Top250Movies/k_0ojt0yvm";
+        // ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
+        
         // String url = "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/TopMovies.json";
         // ExtratorDeConteudo extrator = new ExtratorDeConteudoDoIMDB();
 
@@ -26,7 +28,7 @@ public class App {
 
         /// exibir e manipular os dados
         
-        List<Conteudo> conteudos =  extrator.extraiConteudos(json);
+        List<Conteudo> conteudos = extrator.extraiConteudos(json);
 
         var geradora = new GeradoraDeFigurinhas();
 
